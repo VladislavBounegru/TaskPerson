@@ -1,3 +1,5 @@
+import seven.Person;
+
 import java.util.Scanner;
 
 public class SecondMain {

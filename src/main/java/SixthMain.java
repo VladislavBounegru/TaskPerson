@@ -1,3 +1,5 @@
+import seven.Person;
+
 import java.io.*;
 import java.util.*;
 
@@ -45,13 +47,6 @@ public class SixthMain {
     }
 
     public static Person getPerson() {
-        try {
-            FileWriter writer = new FileWriter("output.txt");
-            BufferedWriter out = new BufferedWriter(writer);
-            writer.write("asdadsdsa");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter first name: ");

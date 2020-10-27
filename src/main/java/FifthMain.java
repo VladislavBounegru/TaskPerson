@@ -1,6 +1,6 @@
-import javax.swing.text.html.parser.Entity;
+import seven.Person;
+
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class FifthMain {
 

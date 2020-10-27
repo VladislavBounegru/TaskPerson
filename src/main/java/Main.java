@@ -1,3 +1,4 @@
+import seven.Person;
 
 public class Main {
 
