@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import javax.swing.text.html.parser.Entity;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -19,6 +19,10 @@ public class Main {
                     System.out.println(people);
                     break;
                 case "3":
+                    sortedDistinctList(people);
+
+                    break;
+                case "-1":
                     exit = true;
                     break;
                 default:
@@ -34,7 +38,8 @@ public class Main {
         System.out.println("Menu:");
         System.out.println("1.Add");
         System.out.println("2.Show");
-        System.out.println("3.Exit");
+        System.out.println("3.Show sorted unique");
+        System.out.println("-1.Exit");
     }
 
     public static Person getPerson() {
@@ -44,6 +49,14 @@ public class Main {
         System.out.print("Enter last name: ");
         String secondName = scanner.next();
         return new Person(firstName, secondName);
+    }
+
+    public static void sortedDistinctList(List<Person> people) {
+        System.out.print("List of secondnames");
+        List<String> sortedLastNames = new ArrayList<>();
+        people.stream().sorted(Comparator.comparing(Person::getLastName)).forEach(p->sortedLastNames.add(p.getLastName()));
+        sortedLastNames.stream().distinct().forEach(s->System.out.print(s+" "));
+        System.out.println();
     }
 
 }
